@@ -1,0 +1,17 @@
+t可显示基本的图像类型，利用QImage、QPxmap类可以实现图像的显示，并且利用类中的方法可以实现图像的基本操作(缩放、旋转)。
+
+1. Qt可显示的图像类型
+
+参考Qt的帮助文档，可支持的类型，即可以直接读取并显示的格式有BMP、GIF、JPG、JPEG、PNG、TIFF、PBM、PGM、PPM、XBM、XPM。
+
+2. Qt用如何显示图像
+
+通常用QLabel显示图像，QLabel类有setPixmap()函数，可以用来显示图像。也可以直接用QPainter画出图像。
+
+如果图像过大，直接用QLabel显示，将会出现有部分图像显示不出来，这时可以用Scroll Area部件。方法：将QLabel部件放到Scroll Area部件里面，将两个采用栅格布局，当图像超出了QLabel部件大小时，就会产生滑动杆，这样图像就可以都看到了。
+
+3. 显示的方法
+
+步骤：先打开一个图像；将图像文件加载进QImage对象中；再用QPixmap对象获得图像；最后用QLabel选择一个QPixmap图像对象显示。
+
+代码如下：
